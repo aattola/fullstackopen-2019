@@ -23,7 +23,7 @@ const Statistics = ({statistics: {good, neutral, bad}}) => {
           <Statistic text='bad' value={bad} />
           <Statistic text='all' value={all} />
           <Statistic text='average' value={all / 3} />
-          <Statistic text='positive' value={good / all * 100 + ' %'} />
+          <Statistic text='positive' value={good / all * 100 + '%'} />
         </tbody>
       </table> 
     </>
