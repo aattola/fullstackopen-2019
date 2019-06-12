@@ -2,6 +2,9 @@ import React from 'react'
 
 const Statistics = ({statistics: {good, neutral, bad}}) => {
   const all = good + neutral + bad
+
+  if (all <= 0) return <h4>No feedback given</h4>
+
   return (
     <>
       <h1>statistics</h1>
