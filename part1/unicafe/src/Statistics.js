@@ -1,5 +1,12 @@
 import React from 'react'
 
+const Statistic = ({text, value}) => (
+  <tr>
+    <td>{text}</td>
+    <td>{value}</td>
+  </tr>
+)
+
 const Statistics = ({statistics: {good, neutral, bad}}) => {
   const all = good + neutral + bad
 
@@ -9,12 +16,16 @@ const Statistics = ({statistics: {good, neutral, bad}}) => {
     <>
       <h1>statistics</h1>
 
-      <h4>good {good}</h4>
-      <h4>neutral {neutral}</h4>
-      <h4>bad {bad}</h4>
-      <h4>all {all}</h4>
-      <h4>average {all / 3}</h4>
-      <h4>positive { good / all * 100}%</h4>
+      <table>
+        <tbody>
+          <Statistic text='good' value={good} />
+          <Statistic text='neutral' value={neutral} />
+          <Statistic text='bad' value={bad} />
+          <Statistic text='all' value={all} />
+          <Statistic text='average' value={all / 3} />
+          <Statistic text='positive' value={good / all * 100 + ' %'} />
+        </tbody>
+      </table> 
     </>
   )
 }
