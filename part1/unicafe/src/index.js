@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
+import Statistics from './Statistics'
+
 const App = () => {
   // tallenna napit omaan tilaansa
   const [good, setGood] = useState(0)
@@ -14,14 +16,7 @@ const App = () => {
       <button onClick={() => setNeutral(neutral + 1)}>neutral</button>
       <button onClick={() => setBad(bad + 1)}>bad</button>
 
-      <h1>statistics</h1>
-
-      <h4>good {good}</h4>
-      <h4>neutral {neutral}</h4>
-      <h4>bad {bad}</h4>
-      <h4>all {good+neutral+bad}</h4>
-      <h4>average {(good+neutral+bad) / 3}</h4>
-      <h4>positive {good / (neutral + bad)}%</h4>
+      <Statistics statistics={{good, neutral, bad}} />
     </div>
   )
 }
